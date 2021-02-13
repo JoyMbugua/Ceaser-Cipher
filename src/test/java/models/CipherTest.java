@@ -6,25 +6,25 @@ import static org.junit.Assert.*;
 
 public class CipherTest {
     @Test
-    public void newCeaserCipher_instantiatesCorrectly() {
+    public void newCipherTest_instantiatesCorrectly() {
         Cipher newCipher = new Cipher("abc", 3);
         assertEquals(true, newCipher instanceof Cipher);
     }
 
     @Test
-    public void newCipher_getsWord_abc() {
+    public void newCipherTest_getsWord_abc() {
         Cipher newCipher = new Cipher("abc", 3);
         assertEquals("abc", newCipher.getWord());
     }
 
     @Test
-    public void newCipher_getsPassword_3() {
+    public void newCipherTest_getsPassword_3() {
         Cipher newCipher = new Cipher("abc", 3);
         assertEquals(3, newCipher.getKey());
     }
 
     @Test
-    public void newCipher_passwordIsPositiveInteger() {
+    public void newCipherTest_passwordIsPositiveInteger() {
         Cipher newCipher = new Cipher("abc", 1);
         assertEquals(true, newCipher.isPositive());
     }

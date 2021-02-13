@@ -26,4 +26,33 @@ public class Cipher {
         return arr;
     }
 
+    public String cipherWord() {
+        String cipheredWord = "";
+        char letter;
+
+        char[] newArr = this.toArray();
+
+        for (int i = 0; i < newArr.length; i++) {
+            // convert to ascii
+            int charCode = (char)(newArr[i]);
+
+            if (charCode >= 'A' && charCode <= 'Z') {
+                // add the password
+                int shiftedChar = charCode + this.password;
+
+                if (shiftedChar > 'Z') {
+                    shiftedChar = charCode - (26 - this.password);
+                }
+
+                letter = (char) shiftedChar;
+                cipheredWord = cipheredWord + letter;
+            } else {
+                cipheredWord += newArr[i];
+            }
+
+
+
+        }
+        return cipheredWord;
+    }
 }
