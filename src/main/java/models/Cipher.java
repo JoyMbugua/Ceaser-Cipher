@@ -38,10 +38,10 @@ public class Cipher {
 
             if (charCode >= 'A' && charCode <= 'Z') {
                 // add the password
-                int shiftedChar = charCode + this.password;
+                int shiftedChar = charCode + this.getKey();
 
                 if (shiftedChar > 'Z') {
-                    shiftedChar = charCode - (26 - this.password);
+                    shiftedChar = charCode - (26 - this.getKey());
                 }
 
                 letter = (char) shiftedChar;
@@ -65,11 +65,11 @@ public class Cipher {
         for (int i = 0; i < newArray.length; i++) {
             int index = (char)(newArray[i]);
             if(index >= 'A' && index <= 'Z'){
-                int newIndex = index - this.password;
+                int newIndex = index - this.getKey();
 
                 if(newIndex < 'A'){
 
-                    newIndex = index + 26 - this.password;
+                    newIndex = index + 26 - this.getKey();
 
                 }
 
