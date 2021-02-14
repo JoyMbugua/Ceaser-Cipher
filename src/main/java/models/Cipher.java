@@ -55,4 +55,32 @@ public class Cipher {
         }
         return cipheredWord;
     }
+
+    public String decipherWord() {
+        String decipheredWord = "";
+        char letter;
+
+        char[] newArray = this.toArray();
+
+        for (int i = 0; i < newArray.length; i++) {
+            int index = (char)(newArray[i]);
+            if(index >= 'A' && index <= 'Z'){
+                int newIndex = index - this.password;
+
+                if(newIndex < 'A'){
+
+                    newIndex = index + 26 - this.password;
+
+                }
+
+                letter = (char)newIndex;
+                decipheredWord += letter;
+            } else {
+                decipheredWord += newArray[i];
+            }
+
+
+        }
+        return decipheredWord;
+    }
 }
