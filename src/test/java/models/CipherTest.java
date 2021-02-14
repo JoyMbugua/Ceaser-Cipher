@@ -24,9 +24,20 @@ public class CipherTest {
     }
 
     @Test
-    public void newCipherTest_passwordIsPositiveInteger() {
+    public void newCipherTest_passwordIsPositiveInteger_1() {
         Cipher newCipher = new Cipher("abc", 1);
         assertEquals(true, newCipher.isPositive());
     }
 
+    @Test
+    public void newCipher_returnsCipheredWord() {
+        Cipher newCipher = new Cipher("abc", 1);
+        assertEquals("BCD", newCipher.cipherWord());
+    }
+
+    @Test
+    public void newCipher_returnsDecipheredWord() {
+        Cipher newCipher = new Cipher("bcd", 1);
+        assertEquals("ABC", newCipher.decipherWord());
+    }
 }
