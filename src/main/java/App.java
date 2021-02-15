@@ -20,10 +20,12 @@ public class App {
 
         Cipher textToCipher = new Cipher(text, pass);
 
-        if(cipherChoice.equals("cipher")){
-            System.out.println(textToCipher.cipherWord());
-        } else if(cipherChoice.equals("decipher")){
-            System.out.println(textToCipher.decipherWord());
+        if(textToCipher.isPositive()){
+            if(cipherChoice.equals("cipher")){
+                System.out.println(textToCipher.cipherWord());
+            } else if(cipherChoice.equals("decipher")){
+                System.out.println(textToCipher.decipherWord());
+            }
         } else{
             System.out.println("Sorry. We do not recognize your input. Please try again");
         }
