@@ -22,9 +22,9 @@ public class App {
 
         if(textToCipher.isPositive()){
             if(cipherChoice.equals("cipher")){
-                System.out.println(textToCipher.cipherWord());
+                System.out.println("Encrypted text: " + textToCipher.cipherWord());
             } else if(cipherChoice.equals("decipher")){
-                System.out.println(textToCipher.decipherWord());
+                System.out.println("Decrypted text: " + textToCipher.decipherWord());
             }
         } else{
             System.out.println("Sorry. We do not recognize your input. Please try again");
